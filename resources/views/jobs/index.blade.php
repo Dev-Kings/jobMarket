@@ -12,5 +12,9 @@
             <p>No Jobs Found</p>
         @endunless
     </div>
-</x-layout>
+
+    <div class="mt-6 p-4">
+        {{ $jobs->links() }}
+    </div>
+</x-layout> 
 

@@ -18,6 +18,13 @@ use App\Models\Job;
 //All jobs
 Route::get('/', [JobController::class, 'index']);
 
-//Single job
+//Show create form
+Route::get('/jobs/create', [JobController::class, 'create']);
+
+//Store job data
+Route::post('/jobs', [JobController::class, 'store']);
+
+//Show single job
 Route::get('/jobs/{job}', [JobController::class, 'show']);
+
 
