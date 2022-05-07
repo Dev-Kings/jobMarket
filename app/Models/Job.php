@@ -1,29 +1,11 @@
-<?php 
+<?php
+
 namespace App\Models;
 
-class Job{
-    public static function all(){
-        return [
-            [
-                'id' => 1,
-                'title' => 'First Job',
-                'description' => 'This is a first job.'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Second Job',
-                'description' => 'This is a second job.'
-            ]
-        ];
-    }
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-    public static function find($id){
-        $jobs = self::all();
-        
-        foreach($jobs as $job){
-            if($job['id'] == $id){
-                return $job;
-            }
-        }
-    }
+class Job extends Model
+{
+    use HasFactory;
 }
