@@ -9,8 +9,8 @@ class JobController extends Controller
 {
     //List all jobs
     public function index(){
-        return view('jobs.index',[
-            'jobs' => Job::all()
+        return view('jobs.index', [
+            'jobs' => Job::latest()->filter(request(['tag', 'search']))->paginate(8)
         ]);
     }
 
@@ -19,5 +19,27 @@ class JobController extends Controller
         return view('jobs.show', [
             'job' => $job
         ]);
+    }
+
+    //Show create form
+    public function create(){
+        return view('jobs.create');
+    }
+
+    //Store job data
+    public function store(Request $request){
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        Job::create($formFields);
+
+        return redirect('/')->with('message', 'Job Posted Successfully');
     }
 }
