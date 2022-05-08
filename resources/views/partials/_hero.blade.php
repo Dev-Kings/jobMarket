@@ -6,19 +6,23 @@
                 style="background-image: url('images/laravel-logo.png')"
             ></div>
 
+            
             <div class="z-10">
                 <h1 class="text-6xl font-bold uppercase text-white">
                     <span class="text-black">Jobs</span>
                 </h1>
+                @auth
                 <p class="text-2xl text-gray-200 font-bold my-4">
                     Find or post jobs & projects
                 </p>
+                @else
                 <div>
                     <a
-                        href="register.html"
+                        href="/register"
                         class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
                         >Sign Up to Post/List a Job</a
                     >
                 </div>
+                @endauth
             </div>
         </section>
