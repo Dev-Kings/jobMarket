@@ -28,6 +28,7 @@ class JobController extends Controller
 
     //Store job data
     public function store(Request $request){
+        //dd($request->file('logo'));
         $formFields = $request->validate([
             'title' => 'required',
             'company' => 'required',
@@ -38,8 +39,40 @@ class JobController extends Controller
             'description' => 'required'
         ]);
 
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
         Job::create($formFields);
 
         return redirect('/')->with('message', 'Job Posted Successfully');
     }
+
+    //Show edit form
+    public function edit(Job $job){
+        return view('jobs.edit', ['job' => $job]);
+    }
+
+    //Update job data
+    public function update(Request $request, Job $job){
+        //dd($request->file('logo'));
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $job->update($formFields);
+
+        return back()->with('message', 'Job Updated Successfully');
+    }
+
 }

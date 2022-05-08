@@ -10,7 +10,7 @@
                     >
                         <img
                             class="w-48 mr-6 mb-6"
-                            src="{{ asset('/images/no-image.png') }}"
+                            src="{{ $job->logo ? asset('storage/'. $job->logo) : asset('/images/no-image.png') }}"
                             alt=""
                         />
 
@@ -45,6 +45,12 @@
                                 >
                             </div>
                         </div>
+                    </div>
+                </x-card>
+                <x-card>
+                    <div class="mt-4 p-2 space-x-10">
+                        <a href="/jobs/{{ $job->id }}/edit">
+                            <i class="fa-solid fa-pencil"> Edit</i>
                     </div>
                 </x-card>
             </div>
