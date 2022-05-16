@@ -5,11 +5,11 @@ With the recurring trend of lack of information on the availability of work, job
 handy to supply for this need. With automated notifications and reminders, the onboarded users are able to be reminded of and or be notified of new and or existing opportunities.
 
 ## FUNCTIONALITIES
--Job Posting 
--Job Applicationa
--User Self Onboarding
--Employee self onboarding
--Reminders
+1. Job Posting 
+2. Job Applicationa
+3. User Self Onboarding
+4. Employee self onboarding
+5. Reminders
 > Email
 > Short Message Service (SMS)
 
