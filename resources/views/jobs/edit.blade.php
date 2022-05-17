@@ -1,3 +1,4 @@
+
 <x-layout>
     <x-card class="p-14 max-w-lg mx-auto mt-24">
     <header class="text-center">

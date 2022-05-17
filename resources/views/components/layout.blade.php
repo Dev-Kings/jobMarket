@@ -32,6 +32,9 @@
             <a href="/"
                 ><img class="w-24" src="images/logo.png" alt="" class="logo"
             /></a>
+            <a href="/" class="inline-block text-black ml-1 mb-0"
+                ><i class="fa-solid fa-home fa-2x"></i> Home 
+            </a>
             <ul class="flex space-x-6 mr-6 text-lg">
 
                 @auth

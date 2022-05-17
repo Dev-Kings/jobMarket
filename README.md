@@ -14,4 +14,4 @@ handy to supply for this need. With automated notifications and reminders, the o
 > Short Message Service (SMS)
 
 ## UNIQUENESS
-Job information posted on the site is accertained and verified by the employee, therefore provides reliable information for application.
+Job information posted on the site is ascertained and verified by the employee, therefore provides reliable information for application.
