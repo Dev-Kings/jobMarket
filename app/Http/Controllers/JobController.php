@@ -45,6 +45,8 @@ class JobController extends Controller
 
         $formFields['user_id'] = auth()->id();
 
+        //dd($formFields);
+
         Job::create($formFields);
 
         return redirect('/')->with('message', 'Job Posted Successfully');

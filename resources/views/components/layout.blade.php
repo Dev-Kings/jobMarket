@@ -86,6 +86,12 @@
             >Post Job</a
         >
     </footer>
+    
     <x-flash-message />
+    {{--ckeditor--}}
+    <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
 </body>
 </html>
