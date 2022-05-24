@@ -27,3 +27,6 @@ Route::get('/posts', function(){
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Public route to all job listings
+Route::get('/', [JobController::class, 'index']);
