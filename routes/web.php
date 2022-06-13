@@ -19,6 +19,9 @@ use App\Http\Controllers\UserController;
 //All jobs
 Route::get('/', [JobController::class, 'index']);
 
+//api route
+Route::get('/alljobs', [JobController::class, 'indexapi']);
+
 //Show create form
 Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth');
 

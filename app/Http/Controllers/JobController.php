@@ -14,6 +14,11 @@ class JobController extends Controller
         ]);
     }
 
+    public function indexapi(){
+        $jobs = Job::get()->toJson(JSON_PRETTY_PRINT);
+        return response($jobs, 200);
+    }
+
     //Show single job
     public function show(Job $job){
         return view('jobs.show', [

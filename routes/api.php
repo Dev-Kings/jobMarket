@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Public route to all job listings
-Route::get('/', [JobController::class, 'index']);
+Route::get('/alljobs',[JobController::class, 'indexapi']);
